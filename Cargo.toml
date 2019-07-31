@@ -1,0 +1,9 @@
+[package]
+name = "find"
+version = "0.1.0"
+authors = ["Federico Barcelona <fede_rico_94@hotmail.com>"]
+edition = "2018"
+
+[dependencies]
+procinfo = "0.4.2"
+uname = "0.1.1"
