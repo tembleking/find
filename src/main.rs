@@ -1,4 +1,5 @@
 use procinfo::pid::{stat, stat_self, Stat};
+use std::fs;
 use std::io::Error;
 use uname::uname;
 
@@ -20,6 +21,14 @@ fn main() -> Result<(), Error> {
 
     let uname_info = uname()?;
     println!("{:?}", uname_info);
+
+    fs::read_dir("./")?.into_iter().for_each(|path| {
+        println!("{}", path.unwrap().path().display());
+    });
+
+    fs::read_dir("/")?.into_iter().for_each(|path| {
+        println!("{}", path.unwrap().path().display());
+    });
 
     Ok(())
 }
