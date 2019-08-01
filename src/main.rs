@@ -30,6 +30,10 @@ fn main() -> Result<(), Error> {
         println!("{}", path.unwrap().path().display());
     });
 
+    println!("Username: {}", whoami::username());
+    println!("User: {}", whoami::user());
+    println!("Env: {}", whoami::env());
+
     Ok(())
 }
 
